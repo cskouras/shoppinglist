@@ -17,7 +17,7 @@ $(document).ready(function(){
 		if(!$.trim($('#item-add').val())) {
 			alert('Please enter text to add to the list');
 		} else {
-			$('<div id="items"></div>').appendTo('#list').html('<img class="unchecked" src="images/unchecked.png"/><span>' + txtval + '</span><img class="xmark" src="images/xmark.png"/>');
+			$('<div class="items"> </div>').appendTo('#list').html('<div class="box"> <img class="box" src="images/unchecked.png"/></div><img class="xmark" src="images/xmark.png"/><p>' + txtval + '</p>');
 
 		document.getElementById('item-add').value = '';
 		};
@@ -26,18 +26,13 @@ $(document).ready(function(){
 	$('#list').on('click', '.xmark', function(e){e.preventDefault(); $(this).parent().remove()});
 
 
-	$('ul').on('click', '.unchecked', function() {
-		$(this).closest('.unchecked').toggleClass('.checked');
-		$(this).remove();
-	});
 
 //cross off list items
-	 $('#list').on('click', 'div', function(){
-		$(this).toggleClass('striked');
-		$(this).children('.unchecked').toggleClass('checked');
-	});	
+	$('#list').on('click', 'img.box', function(){
+		$(this).parents('.items').toggleClass('striked');
+		$(this).toggleClass('checked'); 
+	});
 });
-
 
 
 

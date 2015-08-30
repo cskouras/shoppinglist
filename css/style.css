@@ -1,4 +1,4 @@
-h1 {
+ h1 {
 	color:#2C52FF;
 	text-align:center;
 	font-size:3.5em;
@@ -46,7 +46,7 @@ h2 {
 	margin-left:130px;
 
 }
-#items {
+#list .items {
 	background-color: #C8EAFF;
 	color: #2C52FF;
 	border-radius:5px;
@@ -58,23 +58,29 @@ h2 {
 	text-align: center;
 }
 
-.checked {
+.box >.checked {
 	width:25px;
 	height:25px;
 	float:left;
+	background: url('../images/checked.png');
 }
- .unchecked {
+ .box {
  	width:25px;
 	height:25px;
 	float:left;
+	background: url('../images/unchecked.png');
  }
 
-.striked {
-	text-decoration: line-through;
-}
 .xmark {
 	width:25px;
 	height:25px;
 	float:right;
 }
 	
+.striked {
+	background: url('../images/checked.png');
+	text-decoration: line-through;
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+	
+}
